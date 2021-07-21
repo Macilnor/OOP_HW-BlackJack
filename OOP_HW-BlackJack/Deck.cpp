@@ -29,14 +29,18 @@ void Deck::Shuffle()
 
 void Deck::Deal(Hand& aHand)
 {
-    if (!m_Cards.empty())
+    if (m_Cards.empty())
     {
+        cout << "Out of cards. Unable to deal. Taking new deck." << endl;
+        Populate();
+        Shuffle();
         aHand.Add(m_Cards.back());
         m_Cards.pop_back();
     }
     else
     {
-        cout << "Out of cards. Unable to deal.";
+        aHand.Add(m_Cards.back());
+        m_Cards.pop_back();
     }
 
 }
