@@ -13,9 +13,9 @@ Deck::~Deck()
 void Deck::Populate()
 {
     Clear();
-    for (int s = Card::CLUBS; s <= Card::SPADES; ++s)
+    for (int s = (int)Card::Suit::CLUBS; s <= (int)Card::Suit::SPADES; ++s)
     {
-        for (int r = Card::ACE; r <= Card::KING; ++r)
+        for (int r = (int)Card::Rank::ACE; r <= (int)Card::Rank::KING; ++r)
         {
             Add(new Card(static_cast<Card::Suit>(s), static_cast<Card::Rank>(r)));
         }

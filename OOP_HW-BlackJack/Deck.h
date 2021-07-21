@@ -1,6 +1,5 @@
 #pragma once
 #include <algorithm>
-#include "Hand.h"
 #include "GenericPlayer.h"
 
 using namespace std;

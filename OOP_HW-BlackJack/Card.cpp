@@ -15,7 +15,7 @@ int Card::getValue() const
     if (m_faceUp)
     {
 
-        value = m_Rank;
+        value = (int)m_Rank;
 
         if (value > 10)
         {
@@ -28,11 +28,11 @@ int Card::getValue() const
 ostream& operator<<(ostream& os, const Card& aCard)
 {
     const string RANKS[] = { "0", "A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K" };
-    const string SUITS[] = { "C", "D", "H", "S" };
+    const string SUITS[] = { "\005", "\004", "\003", "\006" };
     
     if (aCard.m_faceUp)
     {
-        os << RANKS[aCard.m_Rank] << SUITS[aCard.m_Suit];
+        os << RANKS[(int)aCard.m_Rank] << SUITS[(int)aCard.m_Suit];
     }
     else
     {

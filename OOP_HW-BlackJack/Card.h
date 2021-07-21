@@ -8,11 +8,11 @@ using namespace std;
 class Card
 {
 public:
-	enum Suit {
+	enum class Suit {
 		CLUBS, DIAMONDS, HEARTS, SPADES
 	};
 
-	enum Rank {
+	enum class Rank {
 		ACE = 1, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,	NINE, TEN, JACK, QUEEN, KING
 	};
 
