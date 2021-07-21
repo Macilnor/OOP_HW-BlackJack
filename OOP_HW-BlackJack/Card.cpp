@@ -15,7 +15,7 @@ int Card::getValue() const
     if (m_faceUp)
     {
 
-        value = (int)m_Rank;
+        value = static_cast<int>(m_Rank);
 
         if (value > 10)
         {
@@ -32,7 +32,7 @@ ostream& operator<<(ostream& os, const Card& aCard)
     
     if (aCard.m_faceUp)
     {
-        os << RANKS[(int)aCard.m_Rank] << SUITS[(int)aCard.m_Suit];
+        os << RANKS[static_cast<int>(aCard.m_Rank)] << SUITS[static_cast<int>(aCard.m_Suit)];
     }
     else
     {
