@@ -13,6 +13,14 @@ int main()
     {
         cout << "How many players? (1 - 7): ";
         cin >> numPlayers;
+        if (cin.fail())
+        {
+            cout << "Wrong input!" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
     vector<string> names;
@@ -31,6 +39,7 @@ int main()
     {
         aGame.Play();
         cout << "\nDo you want to play again? (Y/N): ";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cin >> again;
     }
 

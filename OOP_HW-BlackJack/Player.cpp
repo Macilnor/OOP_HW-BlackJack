@@ -12,6 +12,7 @@ bool Player::IsHitting() const
 {
     cout << m_name << ", do you want a hit? (Y/N): ";
     char response;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cin >> response;
     return (response == 'y' || response == 'Y');
 }
